@@ -6,4 +6,5 @@ export interface ListParams {
     setPokemonId : React.Dispatch<React.SetStateAction<number | string>>;
     loading : boolean;
     error : boolean;
+    setLoadingScreen: React.Dispatch<React.SetStateAction<boolean>>;
 }

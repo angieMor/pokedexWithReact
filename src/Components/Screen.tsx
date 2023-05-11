@@ -1,6 +1,5 @@
 import {ScreenParams} from "../interfaces/ScreenParams";
 import Stats from "./Stats";
-import React from "react";
 import Loading from "../loading.gif";
 import Error from "../FC8R.gif";
 
@@ -12,7 +11,7 @@ function Screen({ pokemon, loading, error }: ScreenParams){
             <div className="pokedex-screen">
                 <img
                     src={Error}
-                    alt="Hubo un error buscando tu pokemon"
+                    alt="There was an error with your pokemon"
                     className="pokedex-no-screen"
                 />
             </div>
@@ -24,7 +23,7 @@ function Screen({ pokemon, loading, error }: ScreenParams){
             { !pokemon || loading ?
                 <img
                     src={Loading}
-                    alt="Aún no hay ningun pokemon"
+                    alt="Theres no pokemon"
                     className="pokedex-no-screen"
                 /> :
                 <div className="pokemon-info">

@@ -1,11 +1,10 @@
 import {ListParams} from "../interfaces/ListParams";
 import React, {useState} from "react";
 import Error from "../FC8R.gif";
-import {Simulate} from "react-dom/test-utils";
 import Loading from "../loading.gif";
 
 // Right side of the pokedex, the list of pokemons
-function List({pokemonList, setPokemonId, loading, error} : ListParams) {
+function List({pokemonList, setPokemonId, loading, error, setLoadingScreen} : ListParams) {
     // rowSelected when the page is first loaded, is always empty
     const [ rowSelected, setRowSelected ] = useState<string>('');
 
@@ -25,7 +24,7 @@ function List({pokemonList, setPokemonId, loading, error} : ListParams) {
             {!pokemonList || loading ?
                 <img
                     src={Loading}
-                    alt="Theres no pokemon yet"
+                    alt="Theres no pokemon"
                     className="pokedex-no-screen"
                 /> :
                 <table>
@@ -41,6 +40,7 @@ function List({pokemonList, setPokemonId, loading, error} : ListParams) {
                             onClick={() => {
                                 setPokemonId(item.name);
                                 setRowSelected(item.name);
+                                setLoadingScreen(true);
                             }}
                             className={rowSelected === item.name ? 'active' : ''}
                         >

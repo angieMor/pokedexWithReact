@@ -9,8 +9,9 @@ function Form({ setPokemonId, setLoading, setError } : FormParams){
     const handleSubmit = (e: { preventDefault: () => void }) => {
         e.preventDefault();
         if(pokemon !== ''){
-            setError(true);
             setLoading(true);
+            setError(true);
+            
             // If the input is not a number then the text will be lower cased
             const pokemonID = window.isNaN(parseInt(pokemon)) ? pokemon.toLowerCase() : pokemon;
             setPokemonId(pokemonID);
@@ -27,7 +28,7 @@ function Form({ setPokemonId, setLoading, setError } : FormParams){
                 type="text"
                 name="pokemon"
                 value={pokemon}
-                placeholder="Busca tu pokemon"
+                placeholder="Search for a pokemon"
                 onChange={e => setPokemon(e.target.value)}
                 autoComplete="off"/>
             <input type="submit" className="pokemon-btn" value=""/>
