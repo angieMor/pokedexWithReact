@@ -1,6 +1,9 @@
 import React, {useEffect, useState} from 'react'
 import Screen from "./Screen";
+import Form from './Form';
 import {Pokemon} from "../interfaces/Pokemon";
+
+
 
 function Pokedex() {
 
@@ -52,6 +55,18 @@ function Pokedex() {
                         pokemon={pokemon}
                         loading={loadingInfoScreen}
                         error={errorInfoScreen}
+                    />
+                </div>
+                <div className="pokedex-left-bottom">
+                    <div className="pokedex-left-bottom-lights">
+                        <div className="light is-blue is-medium" />
+                        <div className="light is-green is-large" />
+                        <div className="light is-orange is-large" />
+                    </div>
+                    <Form
+                        setPokemonId={setPokemonIdentificator}
+                        setLoading={setLoadingInfoScreen}
+                        setError={setErrorInfoScreen}
                     />
                 </div>
             </div>
