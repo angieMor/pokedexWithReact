@@ -11,6 +11,16 @@
   box-shadow: 0 2px 12px -2px rgba(255, 0, 0, 0.4);
 }
 
+.pokedex-right {
+  background: var(--red);
+  height: 100%;
+  width: 100%;
+  border: 1px solid black;
+  box-sizing: border-box;
+  border-radius: 0 10px 10px 0;
+  padding: 15px 20px;
+}
+
 .light {
   border: 1px solid black;
   box-shadow: -2px 2px 0 rgba(255,255,255, .5);
@@ -236,4 +246,70 @@
   0 2.5px 0 hsl(0, 100%, 14%),
   0 3px 0 hsl(0, 100%, 12%),
   0 3.5px 0 hsl(0, 100%, 10%);
+}
+
+/* List Component */
+
+.pokedex-list-container {
+  margin-top: 42px;
+}
+
+.pokedex-list-container ::-webkit-scrollbar {
+  display: block;
+}
+
+.pokedex-list-container ::-webkit-scrollbar-thumb {
+  background: radial-gradient(hsl(0, 100%, 70%), hsl(0, 97%, 25%));
+  border-radius: 10px;
+}
+
+.pokedex-list-container ::-webkit-scrollbar-thumb:hover {
+  background: radial-gradient(hsl(0, 100%, 70%), hsl(0, 97%, 35%));
+}
+
+.pokedex-list {
+  display: grid;
+  overflow: auto;
+}
+
+.pokedex-list table {
+  padding: 0.8rem;
+  flex-grow: 1;
+}
+
+.pagination {
+  display: flex;
+  justify-content: space-between;
+}
+
+.pokedex-list tbody tr {
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.pokedex-list tr {
+  display: flex;
+}
+
+.pokedex-list td, .pokedex-list th {
+  padding-right: 5px;
+  width: 100%;
+  text-align: center;
+}
+
+.pokedex-list tbody tr:hover {
+  background-color: var(--sky);
+}
+
+.pokedex-list tbody tr.active {
+  background-color: var(--blue);
+}
+
+.pagination-button {
+  display: flex;
+  width: 40px;
+  height: 40px;
+  font-weight: 800;
+  align-items: center;
+  justify-content: center;
 }
